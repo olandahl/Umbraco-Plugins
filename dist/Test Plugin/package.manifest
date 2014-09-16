@@ -1,0 +1,18 @@
+{
+	propertyEditors: [
+		{
+			alias:"TestPlugin",
+			name:"Test Plugin",
+			editor: {
+				view: "~/App_Plugins/Test Plugin/view.html",
+				valueType: "JSON"
+			}
+		}
+	],
+	javascript: [
+		"~/App_Plugins/Test Plugin/script.js"
+	],
+	css: [
+		"~/App_Plugins/Test Plugin/styles.css"
+	]
+}

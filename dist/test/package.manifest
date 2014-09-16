@@ -1,0 +1,1 @@
+{propertyEditors:[{alias:"test", name:"test", editor:{view: "~/App_Pluginstest/view.html", valueType: "JSON"}}], javascript: ["~/App_Pluginstest/script.js"], css: ["~/App_Pluginstest/styles.css"]}

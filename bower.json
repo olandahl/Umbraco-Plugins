@@ -1,0 +1,14 @@
+{
+  "name": "umbraco-plugins",
+  "description": "AngularJS Plugins for Umbraco",
+  "version": "0.0.1",
+  "private": true,
+  "authors": [
+    "HiQ"
+  ],
+  "devDependencies": {
+    "angular": "1.0.8",
+    "angular-mocks": "1.0.8",
+    "bourbon": "~4.0.2"
+  }
+}
