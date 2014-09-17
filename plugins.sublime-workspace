@@ -3,6 +3,10 @@
 	{
 		"selected_items":
 		[
+			[
+				"module",
+				"moduleName"
+			]
 		]
 	},
 	"build_system": "",
@@ -53,18 +57,28 @@
 	},
 	"file_history":
 	[
+		"/C/Dev/Umbraco_Plugins/Gruntfile.js",
+		"/C/Dev/Umbraco_Plugins/dist/package.manifest",
+		"/C/Dev/Umbraco_Plugins/dist/scripts.js",
+		"/C/Dev/Umbraco_Plugins/src/Test Plugin/test.js",
+		"/C/Dev/Umbraco_Plugins/src/Test Plugin/test.spec.js",
+		"/C/Dev/Umbraco_Plugins/dist/styles.css",
+		"/C/Dev/Umbraco_Plugins/package.json",
+		"/C/Dev/Umbraco_Plugins/.gitignore",
+		"/C/Dev/Umbraco_Plugins/src/packages/Test Plugin/test2.less",
+		"/C/Dev/Umbraco_Plugins/dist/script.js",
+		"/C/Dev/Umbraco_Plugins/npm-debug.log",
+		"/C/Dev/VGR-Nya-Verksamhetsanalysen/.gitignore",
 		"/C/Dev/Umbraco_Plugins/dist/test/package.manifest",
 		"/C/Dev/Umbraco_Plugins/config/build.config.js",
 		"/C/Dev/Umbraco_Plugins/dist/test/test.min.js",
 		"/C/Dev/Umbraco_Plugins/build/test/test.min.js",
-		"/C/Dev/Umbraco_Plugins/Gruntfile.js",
 		"/C/Dev/Umbraco_Plugins/src/packages/test/test.directives.js",
 		"/C/Dev/Umbraco_Plugins/src/packages/test/test.controllers.js",
 		"/C/Dev/Umbraco_Plugins/bower.json",
 		"/C/Dev/Umbraco_Plugins/e2e-tests/protractor.conf.js",
 		"/C/Dev/Umbraco_Plugins/e2e-tests/scenarios.js",
 		"/C/Dev/Umbraco_Plugins/config/karma.conf.js",
-		"/C/Dev/Umbraco_Plugins/package.json",
 		"/C/Dev/Umbraco_Plugins/src/packages/test/test.spec.js",
 		"/C/Dev/Umbraco_Plugins/src/packages/test/test.js",
 		"/C/Dev/Umbraco_Plugins/src/packages/test/test.html",
@@ -127,6 +141,8 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"packages",
+			"node_modu",
 			"pkg_name",
 			"pkg_dir",
 			"korv",

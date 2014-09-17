@@ -8,60 +8,59 @@ module.exports = function ( grunt ) {
 
 		pkg: grunt.file.readJSON('package.json'),
 
-		pkg_name: grunt.option("package"),
-
-		build_dir: './dist/<%= pkg_name %>',
-
-		src_dir: './src/packages/<%= pkg_name %>',
+		build_dir: './dist',
+		src_dir: './src',
+		dest_js: 'scripts.js',
+		dest_css: 'styles.css',
 
 		manifest: {
+			src: '<%= src_dir %>',
 			dest: '<%= build_dir %>/package.manifest',
-			plugins_dir: '~/App_Plugins',
-			plugin_name: '<%= pkg_name %>'
+			plugins_dir: '~/App_Plugins'
 		},
 
 		uglify: {
 			options: {
-				banner: 'angular.module("umbraco", ["<%= pkg_name %>"]);'
+				banner: 'angular.module("umbraco", ["<%= pkg.name %>"]);'
 			},
 			build: {
 				src: [
-					'<%= src_dir %>/*.js',
-					'!<%= src_dir %>/*.spec.js',
+					'<%= src_dir %>/**/*.js',
+					'!<%= src_dir %>/**/*.spec.js'
 				],
-				dest: '<%= build_dir %>/script.js'
+				dest: '<%= build_dir %>/<%= dest_js %>'
 			}
-		}
-	});
+		},
 
-	function removeWhitespace(text) {
-		return text.replace(/\s/, '');
-	};
+		less: {
+			options: {
+				cleancss: true,
+			},
+			files: {
+				expand: false,
+				src: ['<%= src_dir %>/**/*.less'],
+				dest: '<%= build_dir %>/<%= dest_css %>/'
+			}
+		},
+
+		clean: ['<%= build_dir %>/']
+	});
 
 	grunt.registerTask('manifest', 'create an umbraco plugin manifest.', function() {
 
 		var pluginsDir = grunt.config('manifest.plugins_dir'),
-			pluginName = grunt.config('manifest.plugin_name'),
+			moduleName = grunt.config('pkg.name').replace(/\./g, ' '),
+			jsFile = grunt.config('dest_js'),
+			cssFile = grunt.config('dest_css'),
 			filepath = grunt.config('manifest.dest'),
-			view = pluginsDir + '/' + pluginName + '/view.html',
-			script = pluginsDir + '/' + pluginName + '/script.js',
-			styles = pluginsDir + '/' + pluginName + '/styles.css';
+			js = pluginsDir + '/' + moduleName + '/' + jsFile,
+			css = pluginsDir + '/' + moduleName + '/' + cssFile;
 			contents = '{'+
-				'\n\tpropertyEditors: ['+
-				'\n\t\t{'+
-				'\n\t\t\talias:"'+ pluginName.replace(/\s/, '') +'",'+
-				'\n\t\t\tname:"'+ pluginName +'",'+
-				'\n\t\t\teditor: {'+
-				'\n\t\t\t\tview: "'+ view +'",'+
-				'\n\t\t\t\tvalueType: "JSON"'+
-				'\n\t\t\t}'+
-				'\n\t\t}'+
-				'\n\t],'+
 				'\n\tjavascript: ['+
-				'\n\t\t"'+ script +'"'+
+				'\n\t\t"'+ js +'"'+
 				'\n\t],'+
 				'\n\tcss: ['+
-				'\n\t\t"'+ styles +'"'+
+				'\n\t\t"'+ css +'"'+
 				'\n\t]'+
 				'\n}';
 
@@ -69,6 +68,6 @@ module.exports = function ( grunt ) {
 	});
 
 	// Default task(s).
-	grunt.registerTask('default', ['uglify', 'manifest']);
+	grunt.registerTask('default', ['clean', 'uglify', 'less', 'manifest']);
 	
 };

@@ -1,8 +1,4 @@
-"use strict";
-
-angular.module("umbraco", ["test"]);
-
-angular.module("test")
+angular.module("Custom.Grid.Editors")
 
 .controller("LinkList", ["$scope", function ($scope) {
 
