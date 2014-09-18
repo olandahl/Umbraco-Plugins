@@ -1,43 +1,51 @@
-angular.module("Custom.Grid.Editors")
+(function() {
 
-.controller("LinkList", ["$scope", function ($scope) {
+	"use strict";
 
-	var me = this;
+	angular.module("Custom.Grid.Editors", [])
 
-	if (!$scope.model.value) {
-		$scope.model.value = [];
-	}
+	.controller("LinkList", ["$scope", function ($scope) {
 
-	$scope.addLink = function () {
-		$scope.model.value.push({name: "", url: ""});
-	};
+		if (!$scope.model) {
+			$scope.model = {};
+		}
 
-	$scope.removeLink = function () {
-		$scope.model.value.pop();
-	};
+		if (!$scope.model.value) {
+			$scope.model.value = [];
+		}
 
-	$scope.isEmpty = function() {
-		return $scope.model.value.length === 0;
-	};
+		$scope.addLink = function () {
+			$scope.model.value.push({name: "", url: ""});
+		};
 
-	$scope.isLastItemValid = function() {
-		var linkCount = $scope.model.value.length;
-		return linkCount === 0 || 
-		($scope.model.value[linkCount - 1].name.length > 0 && $scope.model.value[linkCount - 1].url.match(/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/));
-	};
+		$scope.removeLink = function () {
+			$scope.model.value.pop();
+		};
 
-} ])
+		$scope.isEmpty = function() {
+			return $scope.model.value.length === 0;
+		};
 
-.directive("testPartialOne", function() {
-	return {
-		restrict: "E",
-		templateUrl: "test-partial1.tpl.html"
-	};
-})
+		$scope.isLastItemValid = function() {
+			var linkCount = $scope.model.value.length;
+			return linkCount === 0 || 
+			($scope.model.value[linkCount - 1].name.length > 0 && $scope.model.value[linkCount - 1].url.match(/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/));
+		};
 
-.directive("testPartialTwo", function() {
-	return {
-		restrict: "E",
-		templateUrl: "test-partial2.tpl.html"
-	};
-})
+	} ])
+
+	.directive("testPartialOne", function() {
+		return {
+			restrict: "E",
+			templateUrl: "test-partial1.tpl.html"
+		};
+	})
+
+	.directive("testPartialTwo", function() {
+		return {
+			restrict: "E",
+			templateUrl: "test-partial2.tpl.html"
+		};
+	});
+
+}());

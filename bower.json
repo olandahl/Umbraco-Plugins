@@ -8,7 +8,6 @@
   ],
   "devDependencies": {
     "angular": "1.0.8",
-    "angular-mocks": "1.0.8",
-    "bourbon": "~4.0.2"
+    "angular-mocks": "1.0.8"
   }
 }
