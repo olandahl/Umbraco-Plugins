@@ -100,7 +100,7 @@
 
 				scripts: {
 					files: ['<%= js_include %>', '<%= js_spec_exclude %>'],
-					tasks: ['js']
+					tasks: ['jshint']
 				},
 
 				tests: {
@@ -146,8 +146,12 @@
 
 		grunt.registerTask('js', ['jshint', 'uglify']);
 
+		grunt.registerTask('build', ['karma:single', 'clean', 'copy', 'js', 'less', 'manifest']);
+		grunt.registerTask('dev', ['karma:unit', 'watch']);
+		grunt.registerTask('server', ['build', 'connect']);
+
 		// Default task(s).
-		grunt.registerTask('default', ['clean', 'copy', 'karma', 'js', 'less', 'manifest', 'watch']);
+		grunt.registerTask('default', ['build']);
 		
 	};
 

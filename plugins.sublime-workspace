@@ -4,6 +4,14 @@
 		"selected_items":
 		[
 			[
+				"buil",
+				"build_dir"
+			],
+			[
+				"src",
+				"src_dir"
+			],
+			[
 				"module",
 				"moduleName"
 			]
@@ -57,7 +65,11 @@
 	},
 	"file_history":
 	[
+		"/C/Dev/Umbraco_Plugins/bower.json",
 		"/C/Dev/Umbraco_Plugins/dist/scripts.js",
+		"/C/Dev/Umbraco_Plugins/dist",
+		"/C/Dev/Umbraco_Plugins/.jshintrc",
+		"/C/Dev/Umbraco_Plugins/.jshintignore",
 		"/C/Dev/Umbraco_Plugins/Gruntfile.js",
 		"/C/Dev/Umbraco_Plugins/dist/package.manifest",
 		"/C/Dev/Umbraco_Plugins/src/Test Plugin/test.js",
@@ -75,7 +87,6 @@
 		"/C/Dev/Umbraco_Plugins/build/test/test.min.js",
 		"/C/Dev/Umbraco_Plugins/src/packages/test/test.directives.js",
 		"/C/Dev/Umbraco_Plugins/src/packages/test/test.controllers.js",
-		"/C/Dev/Umbraco_Plugins/bower.json",
 		"/C/Dev/Umbraco_Plugins/e2e-tests/protractor.conf.js",
 		"/C/Dev/Umbraco_Plugins/e2e-tests/scenarios.js",
 		"/C/Dev/Umbraco_Plugins/config/karma.conf.js",
@@ -85,8 +96,6 @@
 		"/C/Dev/Umbraco_Plugins/src/packages/test/test.scss",
 		"/C/Dev/Umbraco_Plugins/src/packages/test/test-partial1.tpl.html",
 		"/C/Dev/Umbraco_Plugins/src/packages/test/test-partial2.tpl.html",
-		"/C/Dev/Umbraco_Plugins/.jshintignore",
-		"/C/Dev/Umbraco_Plugins/.jshintrc",
 		"/C/Dev/Umbraco_Plugins/vendor/angular-mocks/angular-mocks.js",
 		"/C/Users/olofla/Documents/My Web Sites/UmbracoCms.7.2.0-build.134/Umbraco/lib/angular/1.1.5/angular-mocks.js",
 		"/C/Users/olofla/Documents/My Web Sites/UmbracoCms.7.2.0-build.134/Umbraco/lib/angular/1.1.5/angular-resource.js",
@@ -141,6 +150,17 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"karma.conf.js",
+			"karma.config.js",
+			"unit",
+			"9876",
+			"connect",
+			"js_spec_exclude",
+			"js_include",
+			"'!<%= src_dir %>/**/*.spec.js'",
+			"'<%= src_dir %>/**/*.js'",
+			"js_include",
+			"<%= src_dir %>/**/*.js",
 			"packages",
 			"node_modu",
 			"pkg_name",
@@ -212,6 +232,11 @@
 		"regex": false,
 		"replace_history":
 		[
+			"'<%= js_spec_exclude %>'",
+			"'<%= js_include %>'",
+			"<%= js_include %>",
+			"js_spec_exclude",
+			"js_include",
 			"pkg_name"
 		],
 		"reverse": false,
