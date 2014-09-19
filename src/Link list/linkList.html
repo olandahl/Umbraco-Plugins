@@ -1,0 +1,23 @@
+<div ng-controller='Custom.Grid.Editors.LinkListCtrl' class='custom-grid-editors-link-list'>
+
+	<ul class='link-list'>
+		<li class='link-item' ng-repeat='link in control.value'>
+			<div class='link-part'>
+				<p>Title</p>
+				<input value='{{link.title}}' ng-model='link.title' />
+			</div>
+			<div class='link-part'>
+				<p>Url</p>
+				<input value='{{link.url}}' ng-model='link.url' />
+			</div>
+			<div class='link-part'>
+				<p>Icon</p>
+				<input value='{{link.icon}}' ng-model='link.icon' />
+			</div>
+		</li>
+	</ul>
+
+	<button ng-click='addLink()' ng-disabled='!isLastItemValid()'>Add</button>
+	<button ng-click='removeLink()' ng-disabled='isEmpty()'>Remove</button>
+
+</div>
